@@ -6,7 +6,8 @@
 # @File    : __init__.py.py
 # @Software: PyCharm
 """
-dynamic pooling: k_max_pooling
+dynamic pooling:
+k_max_pooling
 """
 import tensorflow as tf
 import numpy as np
