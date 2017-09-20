@@ -11,6 +11,7 @@ embedding_size = 5
 batch_size = 1
 sentence_length = 10
 filter_size = 3
+feature_map = 2
 def per_dim_conv_layer(x, w, bias):
     """
     @:param
@@ -36,8 +37,8 @@ def per_dim_conv_layer(x, w, bias):
 
 
 x = tf.Variable(tf.random_uniform([batch_size, sentence_length, embedding_size, 1], -1.0, 1.0))
-w = tf.Variable(tf.truncated_normal([3, embedding_size, 1, 3], stddev=0.1))
-b = tf.Variable(tf.constant(0.1, shape=[3, embedding_size]))
+w = tf.Variable(tf.truncated_normal([filter_size, embedding_size, 1, feature_map], stddev=0.1))
+b = tf.Variable(tf.constant(0.1, shape=[feature_map, embedding_size]))
 
 out = per_dim_conv_layer(x, w, b)
 
